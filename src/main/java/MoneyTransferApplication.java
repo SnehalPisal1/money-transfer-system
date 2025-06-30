@@ -23,6 +23,7 @@ public class MoneyTransferApplication {
 
     public MoneyTransferApplication() {
         accounts.put(1L, new Account(1L, 1000.0));
+        accounts.put(2L, new Account(2L, 1000.0));
     }
 
     public static void main(String[] args) {
