@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MoneyTransferApplication {
     ConcurrentHashMap<Long, Account> accounts = new ConcurrentHashMap<>();
 
+
+    public MoneyTransferApplication() {
+        accounts.put(1L, new Account(1L, 1000.0));
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(MoneyTransferApplication.class, args);
     }
