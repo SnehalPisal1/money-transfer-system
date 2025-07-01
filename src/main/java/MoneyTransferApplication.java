@@ -37,4 +37,10 @@ public class MoneyTransferApplication {
         SpringApplication.run(MoneyTransferApplication.class, args);
     }
 
+    @PostMapping("/account/transfer")
+    @Transactional
+    public ResponseEntity<String> transferMoney(@RequestBody TransferRequest request) {
+
+    }
+
 }
