@@ -50,6 +50,10 @@ public class MoneyTransferApplication {
 
         Account fromAccount = accounts.get(request.getFromAccountId());
         Account toAccount = accounts.get(request.getToAccountId());
+
+        if(fromAccount == null || toAccount == null){
+            return ResponseEntity.badRequest().body("one or both accounts not found");
+        }
     }
 
 }
