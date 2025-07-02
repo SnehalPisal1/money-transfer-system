@@ -44,6 +44,10 @@ public class MoneyTransferApplication {
         if(amount <=0 ){
             return ResponseEntity.badRequest().body("Amount must be positive");
         }
+        if(request.getFromAccountId() == request.getToAccountId()){
+            return ResponseEntity.badRequest().body("Accounts should be different");
+        }
+
     }
 
 }
