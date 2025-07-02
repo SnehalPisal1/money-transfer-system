@@ -48,6 +48,8 @@ public class MoneyTransferApplication {
             return ResponseEntity.badRequest().body("Accounts should be different");
         }
 
+        Account fromAccount = accounts.get(request.getFromAccountId());
+        Account toAccount = accounts.get(request.getToAccountId());
     }
 
 }
