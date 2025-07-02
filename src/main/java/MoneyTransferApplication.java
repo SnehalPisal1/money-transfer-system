@@ -40,7 +40,10 @@ public class MoneyTransferApplication {
     @PostMapping("/account/transfer")
     @Transactional
     public ResponseEntity<String> transferMoney(@RequestBody TransferRequest request) {
-
+        double amount = request.getAmount();
+        if(amount <=0 ){
+            return ResponseEntity.badRequest().body("Amount must be positive");
+        }
     }
 
 }
