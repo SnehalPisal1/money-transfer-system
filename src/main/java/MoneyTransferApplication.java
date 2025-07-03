@@ -54,6 +54,15 @@ public class MoneyTransferApplication {
         if(fromAccount == null || toAccount == null){
             return ResponseEntity.badRequest().body("one or both accounts not found");
         }
+
+        Account firstLock, secLock;
+        if(fromAccount.getAccountId() < toAccount.getAccountId()){
+            firstLock = fromAccount;
+            secLock = toAccount;
+        } else{
+            firstLock = toAccount;
+            secLock = fromAccount;
+        }
     }
 
 }
