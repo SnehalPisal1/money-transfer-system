@@ -63,6 +63,17 @@ public class MoneyTransferApplication {
             firstLock = toAccount;
             secLock = fromAccount;
         }
+        synchronized (firstLock){
+            synchronized (secLock){
+
+                }
+                fromAccount.setBalance(fromAccount.getBalance() - amount);
+                toAccount.setBalance(toAccount.getBalance() + amount);
+            }
+        }
+        return ResponseEntity.status(200).body("transfer successful");
+
+
     }
 
 }
