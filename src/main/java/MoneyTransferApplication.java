@@ -65,7 +65,8 @@ public class MoneyTransferApplication {
         }
         synchronized (firstLock){
             synchronized (secLock){
-
+                if(fromAccount.getBalance() < amount){
+                    return ResponseEntity.badRequest().body("insufficient amount");
                 }
                 fromAccount.setBalance(fromAccount.getBalance() - amount);
                 toAccount.setBalance(toAccount.getBalance() + amount);
