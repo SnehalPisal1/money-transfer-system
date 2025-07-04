@@ -73,6 +73,9 @@ public class MoneyTransferApplication {
             }
         }
         return ResponseEntity.status(200).body("transfer successful");
+    }
+}
+
 
 
     }
